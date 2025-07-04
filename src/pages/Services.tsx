@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { Clock, Sparkles, Heart, Leaf, Moon, Sun } from "lucide-react";
+import { Clock, Sparkles, Heart, Sun } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -11,43 +11,25 @@ const Services = () => {
       icon: Sparkles,
       title: "Traditional Reiki Session",
       duration: "60 minutes",
-      price: "$120",
+      price: "R350",
       description: "Experience the gentle power of traditional Usui Reiki. This session focuses on energy flow, chakra balancing, and deep relaxation.",
       benefits: ["Stress reduction", "Energy balance", "Deep relaxation", "Emotional release"],
-      popular: false
-    },
-    {
-      icon: Heart,
-      title: "Chakra Healing & Alignment",
-      duration: "75 minutes",
-      price: "$150",
-      description: "A comprehensive energy healing session targeting all seven chakras with specialized techniques and crystal support.",
-      benefits: ["Chakra alignment", "Emotional balance", "Increased vitality", "Spiritual clarity"],
       popular: true
     },
     {
-      icon: Leaf,
-      title: "Crystal & Reiki Fusion",
-      duration: "90 minutes",
-      price: "$180",
-      description: "Combines traditional Reiki with carefully selected crystals to amplify healing energy and target specific intentions.",
-      benefits: ["Amplified healing", "Intention setting", "Crystal medicine", "Energy cleansing"],
-      popular: false
-    },
-    {
-      icon: Moon,
-      title: "Moontime Women's Healing",
+      icon: Heart,
+      title: "One on One Yoga",
       duration: "60 minutes",
-      price: "$135",
-      description: "Specialized healing for women's unique energy cycles, supporting hormonal balance and feminine wisdom.",
-      benefits: ["Hormonal support", "Cycle regulation", "Feminine empowerment", "Intuitive awakening"],
+      price: "R200",
+      description: "Personalized yoga session tailored to your individual needs, focusing on alignment, breath work, and mindful movement.",
+      benefits: ["Improved flexibility", "Stress relief", "Mind-body connection", "Personal guidance"],
       popular: false
     },
     {
       icon: Sun,
       title: "Distance Reiki Session",
       duration: "45 minutes",
-      price: "$90",
+      price: "R250",
       description: "Receive powerful healing energy from the comfort of your own space. Perfect for those unable to visit in person.",
       benefits: ["Location flexibility", "Energy transmission", "Comfort of home", "Global accessibility"],
       popular: false
@@ -125,24 +107,14 @@ const Services = () => {
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-4xl font-serif text-sage-800 text-center mb-12">Session Enhancements</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
             <Card className="border-sage-200">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-serif text-sage-800 mb-4">Oracle Card Reading</h3>
+              <CardContent className="p-8 text-center">
+                <h3 className="text-xl font-serif text-sage-800 mb-4">Angel Card Reading</h3>
                 <p className="text-sage-600 mb-4">
-                  Receive intuitive guidance with a personalized oracle card reading to complement your healing session.
+                  Receive divine guidance with a personalized angel card reading to complement your healing session and provide spiritual insights.
                 </p>
-                <div className="text-lg font-medium text-sage-800">+$25</div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-sage-200">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-serif text-sage-800 mb-4">Essential Oil Aromatherapy</h3>
-                <p className="text-sage-600 mb-4">
-                  Enhance your session with carefully selected therapeutic-grade essential oils chosen for your specific needs.
-                </p>
-                <div className="text-lg font-medium text-sage-800">+$15</div>
+                <div className="text-lg font-medium text-sage-800">R100</div>
               </CardContent>
             </Card>
           </div>

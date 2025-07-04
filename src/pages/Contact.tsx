@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -109,9 +109,7 @@ const Contact = () => {
                       </SelectTrigger>
                       <SelectContent className="bg-background border-sage-200">
                         <SelectItem value="traditional-reiki">Traditional Reiki Session</SelectItem>
-                        <SelectItem value="chakra-healing">Chakra Healing & Alignment</SelectItem>
-                        <SelectItem value="crystal-reiki">Crystal & Reiki Fusion</SelectItem>
-                        <SelectItem value="moontime-healing">Moontime Women's Healing</SelectItem>
+                        <SelectItem value="one-on-one-yoga">One on One Yoga</SelectItem>
                         <SelectItem value="distance-reiki">Distance Reiki Session</SelectItem>
                         <SelectItem value="consultation">Initial Consultation</SelectItem>
                       </SelectContent>
@@ -165,8 +163,8 @@ const Contact = () => {
                       <Phone className="w-5 h-5 text-sage-700" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-sage-800 mb-1">Phone</h4>
-                      <p className="text-sage-600">(555) 123-4567</p>
+                      <h4 className="font-medium text-sage-800 mb-1">Phone / WhatsApp</h4>
+                      <p className="text-sage-600">0660911979</p>
                     </div>
                   </div>
 
@@ -176,7 +174,24 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-sage-800 mb-1">Email</h4>
-                      <p className="text-sage-600">hello@reikibylau.com</p>
+                      <p className="text-sage-600">reikibylauren987@gmail.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Instagram className="w-5 h-5 text-sage-700" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-sage-800 mb-1">Instagram</h4>
+                      <a 
+                        href="https://instagram.com/reikibylauren" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-sage-600 hover:text-sage-800 transition-colors"
+                      >
+                        @reikibylauren
+                      </a>
                     </div>
                   </div>
 
