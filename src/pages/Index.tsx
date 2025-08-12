@@ -22,7 +22,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/b54b599c-f30e-412d-a2e9-ecbc4e3c8515.png" 
               alt="Reiki by Lauren Logo" 
-              className="w-32 h-32 mx-auto mb-4"
+              className="w-48 h-48 mx-auto mb-4"
             />
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 animate-fade-in">
@@ -35,7 +35,7 @@ const Index = () => {
             <Button asChild size="lg" className="bg-cream-100 text-purple-800 hover:bg-cream-200 px-8 py-4 text-lg">
               <Link to="/contact">Begin Your Journey</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-cream-100 text-cream-100 hover:bg-cream-100 hover:text-purple-800 px-8 py-4 text-lg">
+            <Button asChild size="lg" variant="outline" className="border-cream-100 text-cream-100 hover:bg-cream-100 hover:text-purple-800 px-8 py-4 text-lg bg-transparent">
               <Link to="/about">Learn More</Link>
             </Button>
           </div>

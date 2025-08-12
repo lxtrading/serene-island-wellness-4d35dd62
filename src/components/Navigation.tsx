@@ -24,7 +24,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="text-2xl font-serif font-semibold text-sage-700">
-              Reiki by Lau
+              Reiki by Lauren
             </div>
           </Link>
 
