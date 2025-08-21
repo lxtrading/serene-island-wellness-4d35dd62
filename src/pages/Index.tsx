@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -6,7 +5,7 @@ import { Sparkles, Heart, Leaf } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
@@ -15,14 +14,14 @@ const Index = () => {
             backgroundImage: `url(https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)`
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-700/80 to-purple-900/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-sage-600/70 to-sage-800/80" />
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div className="mb-8 animate-fade-in">
             <img 
               src="/lovable-uploads/b54b599c-f30e-412d-a2e9-ecbc4e3c8515.png" 
               alt="Reiki by Lauren Logo" 
-              className="w-48 h-48 mx-auto mb-4"
+              className="w-72 h-72 mx-auto mb-4"
             />
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 animate-fade-in">
@@ -43,7 +42,7 @@ const Index = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-cream-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-purple-800 mb-4">
@@ -101,7 +100,7 @@ const Index = () => {
       </section>
 
       {/* About Preview */}
-      <section className="py-20 bg-purple-50">
+      <section className="py-20 bg-cream-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -132,7 +131,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-purple-800 text-center">
+      <section className="py-20 bg-sage-700 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-serif text-cream-50 mb-6">
             Ready to Begin Your Healing Journey?
