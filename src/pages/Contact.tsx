@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/lib/supabase";
 import { MapPin, Phone, Mail, Clock, Instagram, CreditCard } from "lucide-react";
 
 const Contact = () => {
@@ -18,24 +19,56 @@ const Contact = () => {
     message: "",
     preferredTime: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { user } = useAuth();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Booking request sent!",
-      description: "Thank you for your interest. I'll contact you within 24 hours to confirm your session.",
-    });
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-      preferredTime: ""
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('bookings')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            service: formData.service,
+            message: formData.message,
+            preferred_time: formData.preferredTime,
+            status: 'pending',
+            user_id: user?.id || null
+          }
+        ]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Booking request sent!",
+        description: "Thank you for your interest. I'll contact you within 24 hours to confirm your session.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+        preferredTime: ""
+      });
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      toast({
+        title: "Booking failed",
+        description: "There was an error submitting your booking. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (name: string, value: string) => {
@@ -145,8 +178,13 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-purple-700 hover:bg-purple-800 text-cream-50">
-                  Send Booking Request
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full bg-purple-700 hover:bg-purple-800 text-cream-50"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Booking Request'}
                 </Button>
               </form>
             </CardContent>

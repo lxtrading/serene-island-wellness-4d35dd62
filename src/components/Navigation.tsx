@@ -1,17 +1,22 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AuthButton from "@/components/AuthButton";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { user } = useAuth();
 
   const navigation = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
+    ...(user ? [{ name: "Admin", href: "/admin" }] : []),
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -42,9 +47,12 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-sage-700 hover:bg-sage-800 text-cream-50">
-              Book Session
-            </Button>
+            <Link to="/contact">
+              <Button className="bg-sage-700 hover:bg-sage-800 text-cream-50 mr-2">
+                Book Session
+              </Button>
+            </Link>
+            <AuthButton />
           </div>
 
           {/* Mobile menu button */}
@@ -78,10 +86,13 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="px-3 py-2">
-                <Button className="w-full bg-sage-700 hover:bg-sage-800 text-cream-50">
-                  Book Session
-                </Button>
+              <div className="px-3 py-2 space-y-2">
+                <Link to="/contact" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full bg-sage-700 hover:bg-sage-800 text-cream-50">
+                    Book Session
+                  </Button>
+                </Link>
+                <AuthButton />
               </div>
             </div>
           </div>
