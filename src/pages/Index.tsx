@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-cream-50">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -17,7 +17,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-sage-600/70 to-sage-800/80" />
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <div className="mb-8 animate-fade-in">
+          <div className="mb-8 animate-fade-in mt-8">
             <img 
               src="/lovable-uploads/b54b599c-f30e-412d-a2e9-ecbc4e3c8515.png" 
               alt="Reiki by Lauren Logo" 
